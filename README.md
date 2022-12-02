@@ -58,17 +58,13 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Starts December 06, 2022 20:00 UTC
 - Ends December 09, 2022 20:00 UTC
 
-## C4udit / Publicly Known Issues
-
-The C4audit output for the contest can be found [here](add link to report) within an hour of contest opening.
-
-*Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
-
-[ ⭐️ SPONSORS ADD INFO HERE ]
-
 # Overview
 
-*Please provide some context about the code being audited, and identify any areas of specific concern in reviewing the code. (This is a good place to link to your docs, if you have them.)*
+Escher
+Escher is a decentralized curated marketplace for editioned artwork
+
+Contracts
+For Escher721, Sale contracts, and URI delegates, we inherit from the openzeppelen-contracts-upgradeable version of OpenZeppelin's libraries to keep deploy costs low, and the contracts aren't actually upgradeable
 
 # Scope
 
@@ -114,6 +110,15 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+```
+npm ci
+```
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+```
+git submodule update --init --recursive
+```
+
+```
+forge test
+```
+
