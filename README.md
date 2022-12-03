@@ -58,25 +58,104 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Starts December 06, 2022 20:00 UTC
 - Ends December 09, 2022 20:00 UTC
 
-## C4udit / Publicly Known Issues
-
-The C4audit output for the contest can be found [here](add link to report) within an hour of contest opening.
-
-*Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
-
-[ ⭐️ SPONSORS ADD INFO HERE ]
-
 # Overview
 
-*Please provide some context about the code being audited, and identify any areas of specific concern in reviewing the code. (This is a good place to link to your docs, if you have them.)*
+Escher
+Escher is a decentralized curated marketplace for editioned artwork
+
+Contracts
+For Escher721, Sale contracts, and URI delegates, we inherit from the openzeppelen-contracts-upgradeable version of OpenZeppelin's libraries to keep deploy costs low, and the contracts aren't actually upgradeable
+
+### Escher.sol
+This is a minimal curated registry of onchain addresses which are the creators onboarded to Escher. Users can be added as a `Curator` or a `Creator`. Curators are able to onboard creators to the smart contract system. All assigned roles are ERC1155 soulbound tokens.
+
+### Escher Editions
+
+#### URIs
+Each contract must declare a URI delegate which handles all token metadata. More documentation to come here but for now use this goerli implementation of base URI delegate
+
+#### Escher721.sol
+This is the core creator contract implementation for Escher. It is built on top the OpenZepplin ERC721 contracts. Each contract is **fully owned by the creators**. Escher must be careful to not lose their keys or to add backup admins.
+
+#### Escher721Factory.sol
+This is the factory contract where all onboarded artists are able to mint their own `Escher Edition` contract. Each contract is a minimal proxy to keep is cheap and easy to make your own contract. While the Factory uses proxies, nothing in it is upgradeable.
+
+### Fixed Price Sales
+
+#### FixedPriceSaleFactory.sol
+This is the factory contract where fixed price sale proxies are created. The protocol controls a `feeReceiver` variable which is the address that receives 5% of all sales. The other function is creating the proxy. Variables and how the creation flow works will be covered below in [Sales Patterns](#sales-patterns)
+
+#### FixedPriceSale.sol
+This is the core contract for fixed price and fixed supply sales. Inside this contract there are two public functions. One to cancel the sale which is controlled by the creator and the other to purchase an edition.
+
+### Open Edition Sale
+
+#### OpenEditionFactory.sol
+This is the factory contract where open edition sale proxies are created. The protocol controls a `feeReceiver` variable which is the address that receives 5% of all sales. The other function is creating the proxy. Variables and how the creation flow works will be covered below in [Sales Patterns](#sales-patterns)
+
+#### OpenEdition.sol
+This is the core contract for fixed price and fixed supply sales. Inside this contract there are two public functions.
+
+### Last Price Dutch Auction Sale (LPDA)
+
+#### LPDAFactory.sol
+This is the factory contract where LPDA sale proxies are created. The protocol controls a `feeReceiver` variable which is the address that receives 5% of all sales. The other function is creating the proxy. Variables and how the creation flow works will be covered below in [Sales Patterns](#sales-patterns)
+
+#### LPDA.sol
+This is the core contract for LPDA sales. Each contract is a proxy to the implementation of LPDAs. 
+
+## Sales Patterns
+Here we will cover the flow from start to finish for both fixed price and open edition sales. Sales require that the default royalties for a contract has been set at minimum. This is how we decide where payments go.
+### Fixed Price
+1. Set up the token URI by calling `setTokenURI` with the token ID and the URI (arweave recommended)
+2. If the artist would like sales and royalties to go somewhere other than the default royalty receiver, they must call `setTokenRoyalty` with the following variables:
+  - `id`: the token ID of the sale
+  - `receiver`: the address to receive paymnts
+  - `feeNumerator`: the desired royalty %
+3. Call `createFixedSale` in the `FixedPriceSaleFactory` contract. This will create the proxy sale contract. The artist must provide the following variables:
+  - `edition`: the contract address of their Escher Edition proxy
+  - `id`: the id of the token to sell
+  - `price`: the price in ether of each edition
+  - `saleTime`: the starting time in unix of the sale
+  - `amount`: the amount of editions to sell
+4. Call `grantRole` in the creators Escher Edition contract. This will allow the proxy contract to mint the tokens. The following variables must be provided:
+  - `role`: the bytes32 `MINTER_ROLE` which can be found in the artist contract
+  - `account`: the address of the sale proxy contract
+
+
+### Open Edition
+1. Set up the token URI by calling `setTokenURI` with the token ID and the URI (arweave recommended)
+2. If the artist would like sales and royalties to go somewhere other than the default royalty receiver, they must call `setTokenRoyalty` with the following variables:
+  - `id`: the token ID of the sale
+  - `receiver`: the address to receive paymnts
+  - `feeNumerator`: the desired royalty %
+3. Call `createOpenEdition` in the `OpenEditionSaleFactory` contract. This will create the proxy sale contract. The artist must provide the following variables:
+  - `edition`: the contract address of their Escher Edition proxy
+  - `id`: the id of the token to sell
+  - `price`: the price in ether of each edition
+  - `saleTime`: the starting time in unix of the sale
+  - `endTime`: the ending time in unix of the sale
+4. Call `grantRole` in the creators Escher Edition contract. This will allow the proxy contract to mint the tokens. The following variables must be provided:
+  - `role`: the bytes32 `MINTER_ROLE` which can be found in the artist contract
+  - `account`: the address of the sale proxy contract
+5. Once the sale has ended, the artist must call `finalize` to get their Ethereum.
 
 # Scope
 
-*List all files in scope in the table below -- and feel free to add notes here to emphasize areas of focus.*
-
 | Contract | SLOC | Purpose | Libraries used |  
 | ----------- | ----------- | ----------- | ----------- |
-| contracts/folder/sample.sol | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/Escher.sol | 59 | Manages roles | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/Escher721.sol | 95 | ERC721 Token | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/Escher721Factory | 42 | Token Factory | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/minters/FixedPriceSale.sol | 112 | Sale Contract | [`@openzeppelin-upgradeable/*`](https://openzeppelin.com/contracts/) |
+| src/minters/FixedPriceFactory.sol | 45 | Sale Factory | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/minters/OpenEdition.sol | 124 | Sale Contract | [`@openzeppelin-upgradeable/*`](https://openzeppelin.com/contracts/) |
+| src/minters/OpenEditionFactory.sol | 45 | Sale Factory | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/minters/LPDA.sol | 149 | Sale Contract | [`@openzeppelin-upgradeable/*`](https://openzeppelin.com/contracts/) |
+| src/minters/LPDAFactory.sol | 49 | Sale Factory | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| src/uris/Base.sol | 21 | Metadata Contract | [`@openzeppelin-upgradeable/*`](https://openzeppelin.com/contracts/) |
+| src/uris/Unique.sol | 13 | Metadata Contract | [`@openzeppelin-upgradeable/*`](https://openzeppelin.com/contracts/) |
+| src/uris/Generative.sol | 31 | Metadata Contract | [`@openzeppelin-upgradeable/*`](https://openzeppelin.com/contracts/) |
 
 ## Out of scope
 
@@ -114,6 +193,15 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+```
+npm ci
+```
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+```
+git submodule update --init --recursive
+```
+
+```
+forge test
+```
+
