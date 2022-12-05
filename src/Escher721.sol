@@ -13,10 +13,12 @@ contract Escher721 is
     AccessControlUpgradeable,
     ERC2981Upgradeable
 {
+    /// @notice The role to update the URI delegate
     bytes32 public constant URI_SETTER_ROLE = keccak256("URI_SETTER_ROLE");
+    /// @notice The role to mint editionized art work
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
-    string internal base;
+    /// @notice The URI delegate address
     address public tokenUriDelegate;
 
     /// @custom:oz-upgrades-unsafe-allow constructor
@@ -71,10 +73,12 @@ contract Escher721 is
         _deleteDefaultRoyalty();
     }
 
+    /// @notice Getter for the token URI
+    /// @param _tokenId the token ID to get the URI for
     function tokenURI(
-        uint256 tokenId
+        uint256 _tokenId
     ) public view override(ERC721Upgradeable) returns (string memory) {
-        return ITokenUriDelegate(tokenUriDelegate).tokenURI(tokenId);
+        return ITokenUriDelegate(tokenUriDelegate).tokenURI(_tokenId);
     }
 
     function supportsInterface(

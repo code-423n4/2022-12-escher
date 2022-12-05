@@ -21,20 +21,20 @@ contract Escher721Factory {
     }
 
     /// @notice create a new escher unique contract
-    /// @param name the name of the contract
-    /// @param symbol the symbol of the contract
-    /// @param uri the uri delegate contract
+    /// @param _name the name of the contract
+    /// @param _symbol the symbol of the contract
+    /// @param _uri the uri delegate contract
     function createContract(
-        string memory name,
-        string memory symbol,
-        address uri
+        string memory _name,
+        string memory _symbol,
+        address _uri
     ) external returns (address escherClone) {
         require(escher.hasRole(escher.CREATOR_ROLE(), msg.sender), "NOT AUTHORIZED");
 
         escherClone = implementation.clone();
-        address uriClone = uri.clone();
+        address uriClone = _uri.clone();
 
-        Escher721(escherClone).initialize(msg.sender, uriClone, name, symbol);
+        Escher721(escherClone).initialize(msg.sender, uriClone, _name, _symbol);
         ITokenUriDelegate(uriClone).initialize(msg.sender);
 
         emit NewEscher721Contract(msg.sender, escherClone, uriClone);
