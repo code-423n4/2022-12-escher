@@ -250,6 +250,7 @@ forge test
 
 Run Slither
 
+Make sure you're running the latest version of slither v0.9.1
 ```
 slither .
 ```
