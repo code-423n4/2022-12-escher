@@ -181,7 +181,6 @@ contract FixedPriceTest is FixedPriceBaseTest {
 
     function test_RevertsWhenTooLate_Cancel() public {
         test_Buy();
-        uint256 cached_balance = address(this).balance;
 
         vm.prank(address(69));
         vm.expectRevert("TOO LATE");
