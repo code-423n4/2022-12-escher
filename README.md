@@ -53,7 +53,7 @@ This is the core contract for fixed price and fixed supply sales. Inside this co
 This is the factory contract where open edition sale proxies are created. The protocol controls a `feeReceiver` variable which is the address that receives 5% of all sales. The other function is creating the proxy. Variables and how the creation flow works will be covered below in [Sales Patterns](#sales-patterns)
 
 #### OpenEdition.sol
-This is the core contract for fixed price and fixed supply sales. Inside this contract there are two public functions.
+This is the core contract for fixed price and uncapped supply sales. Inside this contract there are two public functions.
 
 ### Last Price Dutch Auction Sale (LPDA)
 
