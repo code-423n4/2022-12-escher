@@ -1,0 +1,634 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / escher-dec06
+==============================================================
+
+[12/05/2022 14:40] kartoonjoy (pinned)
+👋 Hello and welcome to the contest channel for the $36,500 USDC **Escher.xyz** contest!
+
+📆 Contest opens 12/06/2022 20:00 (20:00 UTC) and runs through 12/09/2022 20:00 (20:00 UTC) (3 days).
+
+Please give a warm welcome to the Escher.xyz team, particularly @snevins and @swaHili, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-12-escher-contest
+
+{Embed}
+https://code4rena.com/contests/2022-12-escher-contest
+Code4rena Escher contest
+$36,500 USDC
+6 December 2022—9 December 2022
+Code4rena - ARCHIVE-Q4-2022 - escher-dec06 [1049333479105630258].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+C4Keycap (8) 4739_Skeletor (2) 
+
+[12/05/2022 19:23] evan#9648
+Hey, is there a place where we can get a brief understanding of the project before the contest starts? I can't seem to find anything online.
+
+
+[12/06/2022 20:05] swaHili#3962
+gm
+
+
+[12/06/2022 20:07] 0xdeadbeef0x
+gm!
+
+
+[12/06/2022 20:14] andy8052
+gm
+
+
+[12/06/2022 20:16] snevins
+gm
+
+
+[12/06/2022 20:19] snevins
+gm sir! Escher aims to be the premiere market for editioned artwork and to make distributing work easier for artists and also more accessible for collectors
+
+
+[12/06/2022 20:23] pfapostol
+is it typo in description of "OpenEdition.sol" in "Overview" section?
+
+
+[12/06/2022 20:30] snevins
+Ahh good catch, the open editions don't have a capped supply
+
+
+[12/06/2022 21:58] aviggiano
+the c4udit results are missing for this contest
+
+
+[12/06/2022 21:58] itsmetechjay
+They'll be posted shortly!
+
+{Reactions}
+👍 
+
+[12/06/2022 22:15] thepicodes (pinned)
+**Automated Findings:** https://gist.github.com/Picodes/cd4ff52d400a1d060dcbd3d85b08b10f
+
+{Reactions}
+thankyou (2) 
+
+[12/06/2022 22:16] itsmetechjay (pinned)
+Wardens, please note that c4udit output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+**Automated findings: **
+https://gist.github.com/Picodes/cd4ff52d400a1d060dcbd3d85b08b10f
+
+This will also be linked in the contest README file shortly.
+
+{Embed}
+https://gist.github.com/Picodes/cd4ff52d400a1d060dcbd3d85b08b10f
+4naly3er-2022-12-escher.md
+GitHub Gist: instantly share code, notes, and snippets.
+Code4rena - ARCHIVE-Q4-2022 - escher-dec06 [1049333479105630258].txt_Files/gist-og-image-17482.png
+
+
+[12/06/2022 22:17] itsmetechjay
+Pinned a message.
+
+
+[12/06/2022 22:17] itsmetechjay
+Pinned a message.
+
+
+[12/06/2022 22:23] adriro
+@swaHili @snevins sers, can I dm?
+
+{Reactions}
+👍 (2) 
+
+[12/06/2022 22:53] 0xa5df
+It seems like the README lacks some basic high-level explanation of the project.
+What's the difference between Open Edition and Fixed Price sales?
+
+
+[12/06/2022 22:58] snevins
+Open edition has an uncapped supply and fixed price has capped supply
+
+{Reactions}
+thankyou 
+
+[12/06/2022 22:59] 0xa5df
+Thanks!
+
+{Reactions}
+catjam 
+
+[12/07/2022 04:42] chaduke#3730
+let's get started!
+
+{Reactions}
+discodog 
+
+[12/07/2022 08:00] saksham#7993
+Any sponsor up for a DM?
+
+{Reactions}
+👍 (2) 
+
+[12/07/2022 08:13] hake_stake
+@snevins sent fren request
+
+{Reactions}
+👍 
+
+[12/07/2022 16:04] ne0n239
+@snevins  friend request sent
+
+{Reactions}
+👍 
+
+[12/07/2022 21:52] jm217
+@snevins friend request sent
+
+{Reactions}
+catjam 
+
+[12/07/2022 22:25] swaHili#3962
+here to help as well, feel free to send requests
+
+
+[12/07/2022 22:28] jm217
+Please provide a brief explanation about the intention of minting/burning NFT while granting/revoking role in the `Escher.sol`
+
+
+[12/07/2022 22:30] snevins
+we thought it would be fun to have an NFT reflecting your role in Escher
+
+
+[12/07/2022 22:31] jm217
+I see. But it's not used in the other contracts at the moment, right? I can't find it being used as a proof of role anywhere
+
+
+[12/07/2022 22:38] swaHili#3962
+that's because the role itself is used as proof. the NFT is just a soul bound visual that represents the role
+
+{Reactions}
+👍 (3) 
+
+[12/08/2022 06:50] supernovahs
+@snevins DMed
+
+
+[12/08/2022 07:04] supernovahs
+@swaHili dmed
+
+{Reactions}
+👍 
+
+[12/08/2022 09:29] 0xbtk
+@swaHili Dmed
+
+{Reactions}
+👍 
+
+[12/08/2022 14:42] aphak5010
+Hey can someone pls explain to me what the purpose of Generative.sol is and how it is used?
+
+
+[12/08/2022 14:46] snevins
+Basically that pattern was inspired by the QQL drop which can be found here https://etherscan.io/address/0x845dd2a7ee2a92a0518ab2135365ed63fdba0c88#readContract
+
+
+[12/08/2022 14:53] aphak5010
+It seems that currently your contracts do not make use of this feature. So the seeds can only be used by contracts that are not within the scope of this audit. Is this correct?
+
+{Reactions}
+👍 
+
+[12/08/2022 14:56] 0xbtk
+@snevins Dmed you
+
+{Reactions}
+catjam 
+
+[12/08/2022 17:07] sovaslava9
+What is automation tool did you use for find these issues?
+
+
+[12/08/2022 17:29] sovaslava9
+why you didnt publish gas automation issues, when contes has started?
+
+
+[12/08/2022 17:41] pfapostol
+Is the full “life cycle” limited by: create, sell/buy NFT's? 
+I see functions that are not used in contracts. Is  the audit part of a larger project, or is it a complete functionality?
+
+
+[12/08/2022 17:51] cloudellie
+Can we move this question back to the #❓questions channel, please? This is standard procedure for all Code4rena contests. Happy to discuss further, but let's keep discussion here specific to the Escher contest. Thanks.
+
+{Reactions}
+👍 
+
+[12/08/2022 18:07] snevins
+For the most part complete, there might be more out of scope additions around the account that has DEFAULT_ADMIN_ROLE
+
+
+[12/08/2022 18:07] snevins
+And then we plan to role out additional metadata delegates and minting patterns
+
+
+[12/09/2022 05:33] detective#9387
+@snevins Dmed
+
+{Reactions}
+👍 
+
+[12/09/2022 05:56] 0xRobocop#3994
+A question, if a gas optimization topic was found in the automated findings but not all the instances, can we report the other instances?
+
+
+[12/09/2022 08:47] Junnon#3182
+@snevinsadded as friend, i want to dm ser thanks
+
+{Reactions}
+👍 
+
+[12/09/2022 09:06] 2997ms
+@snevins maybe it's a bit late, but could I add you as a friend and DM you a question about the project?  thanks!
+
+{Reactions}
+👍 
+
+[12/09/2022 09:17] seyni#0562
+DMed @snevins @swaHili
+
+{Reactions}
+👍 (2) 
+
+[12/09/2022 13:34] mahdi9606
+@swaHili Dmed
+
+{Reactions}
+👍 
+
+[12/09/2022 13:45] snevins
+gm i'm around if you need assistance
+
+{Reactions}
+🎉 
+
+[12/09/2022 13:53] mahdi9606
+I want to know are users allowed to refund the difference price of purchased token and the lowest price if not all tokens sold out ?
+in LPDA Sale
+
+
+[12/09/2022 14:01] snevins
+yessir
+
+{Reactions}
+👍 
+
+[12/09/2022 14:15] _oceansky
+hi @snevins , dmed you , kindly accept fr request thanks
+
+{Reactions}
+discodog 
+
+[12/09/2022 18:43] stealthyzzzz
+@snevins Sent a fr 🙂 Hope you're still up for a Q
+
+{Reactions}
+catjam 
+
+[12/09/2022 19:21] kartoonjoy
+Pinned a message.
+
+
+[12/09/2022 19:25] dr0p_.
+https://ethereum.stackexchange.com/q/140937
+
+{Embed}
+https://ethereum.stackexchange.com/q/140937
+Why isn't calldata used in this function's argument? (OpenZeppelin/...
+Solidity noob here; reading about data locations i've learned that whenever you don't need to store or modify a function's input value it's actually more gas efficient to set its location to callda...
+Code4rena - ARCHIVE-Q4-2022 - escher-dec06 [1049333479105630258].txt_Files/apple-touch-icon%402-EBA58.png
+
+
+[12/09/2022 19:51] snevins
+are you the OP of the post?
+
+
+[12/09/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Escher.xyz** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+👀 (17) goose 
+
+[01/03/2023 21:10] matin6517
+👀
+
+{Reactions}
+4739_Skeletor 
+
+[01/05/2023 17:25] xyzbtchunt
+Any update?
+
+
+[01/05/2023 19:26] pfapostol
+Not much time passed, considering the holidays.
+
+
+[01/06/2023 18:15] xyzbtchunt
+🤔
+
+
+[01/07/2023 19:43] sovaslava9
+I saw in contests history and about 3 projects before it, are waiting results and only after them, will be esher.. (
+
+
+[01/12/2023 03:52] akshaysrivastav
+👀
+
+{Reactions}
+4739_Skeletor (2) ☹️ 
+
+[01/12/2023 09:57] neko_nyaa
+https://github.com/code-423n4/code423n4.com/pull/6700/commits/45b81559f439b543a08ac9b9a9d5c391a18758c4
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/6700/commits/45b81559f439b543a08ac9b9a9d5c391a18758c4
+Update Leaderboard by liveactionllama · Pull Request #6700 · code-4...
+Code4rena - ARCHIVE-Q4-2022 - escher-dec06 [1049333479105630258].txt_Files/98446738-1A1F9
+
+{Reactions}
+🥲 (2) 😫 😂 (2) 😬 4739_Skeletor 
+
+[01/12/2023 15:17] itsmetechjay
+:C4Keycap:  💸 🎉 Awards for **Escher.xyz**:
+
+$4,376.54 USDC » @bin2chen 
+$3,356.54 USDC » @Thunder 
+$2,997.84 USDC » @csanuragjain 
+$2,864.75 USDC » @stealthyz 
+$1,805.27 USDC » @RaymondFam 
+$1,765.14 USDC » @hansfriese
+$1,530.63 USDC » @HollaDieWaldfee 
+$1,010.71 USDC » @adriro 
+$991.64 USDC » @Josiah 
+$656.68 USDC » @0xA5DF 
+$640.50 USDC » @slvDev 
+$624.40 USDC » @0xSmartContract 
+$576.15 USDC » @AkshaySrivastav 
+$480.31 USDC » @Helios 
+$423.75 USDC » @pfapostol 
+$380.74 USDC » @obront 
+$349.29 USDC » @cccz 
+$320.32 USDC » @0xNazgul 
+$239.83 USDC » @minhquanym
+$190.22 USDC » @Chom 
+$171.27 USDC » ForkEth (@Nullbutc00l, @filipaze)
+$162.91 USDC » @Roman 
+$160.95 USDC » @Ch_301 
+$148.59 USDC » @yixxas 
+$146.79 USDC » @0xRobocop 
+$137.78 USDC » @hihen 
+$132.36 USDC » @CRYP70
+$118.59 USDC » @carrotsmuggler 
+$116.10 USDC » @imare 
+$111.28 USDC » @tnevler 
+$108.87 USDC » @ladboy233小伙子 
+$108.58 USDC » @gzeon 
+$108.08 USDC » @Deleted User 
+$97.84 USDC » @immeas 
+$93.27 USDC » @ahmedov 
+$92.65 USDC » @Dinesh11G
+$91.58 USDC » @rvierdiiev 
+$90.97 USDC » @danyams 
+$90.12 USDC » @seyni 
+$88.78 USDC » @0x1f8b
+$87.28 USDC » @Ruhum
+$80.77 USDC » @saian 
+$66.79 USDC » @ajtra 
+$66.79 USDC » @Bnke
+$66.79 USDC » @zaskoh 
+$66.18 USDC » @sakshamguruji 
+$66.18 USDC » @anon 
+$60.85 USDC » @gasperpre 
+$59.81 USDC » @lukris02 
+$58.97 USDC » @nalus
+$57.63 USDC » UniversalCrypto (@amaechi eth, @tettehnetworks)
+$57.63 USDC » @MHKK33
+$57.63 USDC » @Englave 
+$57.63 USDC » @Matin
+$51.80 USDC » @lucyoa 
+$50.96 USDC » @0x52 
+$50.96 USDC » @wait 
+$50.45 USDC » @evan 
+$50.45 USDC » @jayphbee 
+$50.23 USDC » @aviggiano 
+$50.23 USDC » @fs0c
+$50.23 USDC » @cryptonue 
+$49.61 USDC » @ey88 
+$35.02 USDC » @nicobevi.eth 
+$35.02 USDC » @ReyAdmirado 
+$35.02 USDC » @Diana 
+$35.02 USDC » @c3phas 
+$35.02 USDC » @cryptostellar5 
+$33.34 USDC » @nameruse 
+$32.50 USDC » @_Adam 
+$31.16 USDC » @thinklab
+$31.16 USDC » @0xfuje
+$31.16 USDC » @joestakey 
+$31.16 USDC » @TomJ
+$31.15 USDC » @lumoswiz 
+$31.15 USDC » @jonatascm 
+$30.16 USDC » @Soosh 
+$29.70 USDC » @KingNFT 
+$29.65 USDC » @0xbepresent 
+$29.43 USDC » @yellowBirdy 
+$29.43 USDC » @karanctf 
+$29.43 USDC » @pashov 
+$29.20 USDC » @neumo
+
+{Reactions}
+4739_Skeletor 
+
+[01/12/2023 15:17] itsmetechjay
+$2.80 USDC » @Parth 
+$2.18 USDC » @Madalad 
+$2.18 USDC » @gz627 
+$2.18 USDC » @jadezti 
+$2.18 USDC » @kree-dotcom
+$2.18 USDC » @minhtrng
+$2.18 USDC » @kiki_dev 
+$1.96 USDC » @0xdeadbeef0x
+$1.76 USDC » @mahdikarimi
+$1.45 USDC » @zapaz
+$1.45 USDC » @chaduke
+$1.34 USDC » @eyexploit
+$0.84 USDC » @8olidity
+$0.84 USDC » @0x446576
+$0.84 USDC » @0xDave
+$0.84 USDC » poirots (@Davide Silva, @resende, @naps62 )
+$0.84 USDC » @sorryNotsorry 
+$0.84 USDC » @Tricko 
+$0.84 USDC » @kaliberpoziomka8552 
+$0.84 USDC » @Franfran 
+$0.84 USDC » @code-cipher
+$0.61 USDC » @fatherOfBlocks
+$0.61 USDC » @0xhacksmithh
+$0.61 USDC » @martin11
+$0.61 USDC » @btk 
+$0.61 USDC » @tourist
+$0.61 USDC » @dic0de 
+$0.61 USDC » @simon135 
+$0.61 USDC » @__141345__ 
+$0.61 USDC » @supernova
+$0.61 USDC » @shark
+$0.61 USDC » @Rahoz
+$0.61 USDC » @Awesome 
+$0.61 USDC » @Tutturu
+$0.61 USDC » asgeir
+$0.61 USDC » @JC
+
+🏁 Findings summary
+---------------------------
+High risk findings: 72 total, 3 unique
+Med risk findings: 156 total, 13 unique
+Gas findings: 17 
+QA findings: 34
+
+Awards will be distributed on Polygon within the next 1-2 weeks. **Congratulations, everyone! 💸 💸 💸**
+
+*If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+
+[01/12/2023 15:22] ladboy233
+😂👍
+
+
+[01/12/2023 15:29] ahmet5611
+just got my first award  :nice: :chefskiss:
+
+{Reactions}
+hi5 (10) 
+
+[01/12/2023 15:30] teacupsipper
+congrats sir
+
+
+[01/12/2023 16:03] akshaysrivastav
+is the findings repo public?
+
+
+[01/12/2023 16:05] itsmetechjay
+Not yet. It will be made public once the report is published.
+
+
+[01/12/2023 17:40] slvdev
+Awesome! btw it was my first report 😃
+
+{Reactions}
+🎉 (10) 
+
+[01/12/2023 18:51] gz627
+@Jay | C4 1 Hig + 1 Med satisfied findings were awarded $2.18 only. Is that correct?
+
+
+[01/12/2023 18:52] ladboy233
+yeah it is possible.  if so many auditors find one bug
+
+
+[01/12/2023 18:57] gz627
+But it's quite unlikely. Anyway, where we can find out how many wardens find the same issue?
+
+
+[01/12/2023 19:01] ladboy233
+need to wait for report coming out
+
+
+[01/12/2023 19:02] ladboy233
+yeah I think usually one month for reward and another month for report
+
+
+[01/12/2023 19:02] gz627
+a little too slow.
+
+
+[01/12/2023 19:04] pfapostol
+You can count manually in github commit for this contest
+
+{Reactions}
+👍 (3) 
+
+[01/12/2023 19:05] pfapostol
+High was found by 50 people
+
+
+[01/12/2023 19:06] pfapostol
+And 37 wardens for your medium
+
+
+[01/12/2023 19:07] pfapostol
+So this is why only 2$
+
+{Reactions}
+👍 (2) 
+
+[01/12/2023 20:17] gz627
+so the award of a high can be much lower than a med depending on the number of wardens on the same finding! I didn't realize this before.
+
+{Reactions}
+💯 
+
+[01/12/2023 20:26] 0xRobocop#3994
+Yep, there is also the c4 documentation where you can deep down on the rewarding formula if you want to understand it better.
+
+{Reactions}
+👍 
+
+[01/13/2023 03:47] stealthyzzzz
+First comp done🤟
+
+{Reactions}
+hi5 (3) 
+
+[01/13/2023 13:11] 0xfuje
+congrats ser, second contest for me
+
+
+[01/15/2023 02:08] chaduke#3730
+good job!
+
+{Reactions}
+👍🏻 (2) 
+
+[01/15/2023 02:08] chaduke#3730
+@0xfuje
+
+
+[01/15/2023 02:08] chaduke#3730
+@stealthyz
+
+
+[01/20/2023 09:59] MHKK33#5972
+Hi
+
+
+[01/20/2023 09:59] MHKK33#5972
+How can I receive my award
+
+
+[01/20/2023 19:08] madalad
+it should have been sent to your wallet already (usdc on polygon)
+
+
+[01/30/2023 07:30] stealthyzzzz
+Any clue when the report will be live?
+
+{Reactions}
+4739_Skeletor 
+
+==============================================================
+Exported 93 message(s)
+==============================================================
